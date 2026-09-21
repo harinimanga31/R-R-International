@@ -1,0 +1,1 @@
+export default function DestinationCard({name,code}:{name:string;code:string}){return <div className="rounded-xl border bg-white p-5"><p className="text-xs font-bold uppercase tracking-widest text-brandred">{code}</p><h3 className="mt-1 font-bold">{name}</h3><p className="mt-2 text-sm text-slate-500">International shipping destination</p></div>}

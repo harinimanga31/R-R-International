@@ -1,0 +1,3 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+export default function TrackingWidget(){const [awb,setAwb]=useState("");const nav=useNavigate();return <div className="card p-5 sm:p-7"><h3 className="text-xl font-bold">Track your shipment</h3><p className="mt-2 text-sm text-slate-500">Enter your Air Waybill (AWB) number.</p><div className="mt-5 flex flex-col gap-3 sm:flex-row"><input className="field" placeholder="e.g. RR26HYD000123" value={awb} onChange={e=>setAwb(e.target.value)} onKeyDown={e=>e.key==="Enter"&&awb.trim()&&nav(`/track?awb=${encodeURIComponent(awb.trim())}`)}/><button className="btn btn-dark sm:px-8" onClick={()=>awb.trim()&&nav(`/track?awb=${encodeURIComponent(awb.trim())}`)}>Track</button></div></div>}

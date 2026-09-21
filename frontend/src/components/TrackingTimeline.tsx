@@ -1,0 +1,3 @@
+import StatusBadge from "./StatusBadge";
+import type { TrackingEvent } from "../types";
+export default function TrackingTimeline({events}:{events:TrackingEvent[]}){return <div className="space-y-5">{events.map((e,i)=><div key={i} className="relative pl-8"><div className="absolute left-0 top-1 h-3 w-3 rounded-full bg-yellow-500 ring-4 ring-red-50"/><div className="border-b pb-5"><div className="flex flex-wrap items-center justify-between gap-2"><StatusBadge status={e.status}/><time className="text-xs text-slate-500">{new Date(e.timestamp).toLocaleString()}</time></div><p className="mt-2 font-semibold">{e.location}</p><p className="text-sm text-slate-600">{e.description}</p></div></div>)}</div>}
